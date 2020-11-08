@@ -6,6 +6,7 @@ function setup() {
   frameRate(fps);
   
   init_inv();
+  inv_increment(); // Hacky way to give Red to the Player at the start
   generate_minimap();
   input_setup();
   setGamestateMenu();
