@@ -6,8 +6,8 @@ function setGamestateMenu() {
   }
 
   tileGapSize = 3;
-  tileCountHoriz = 122;
-  tileCountVert = 60;
+  tileCountHoriz = 18;
+  tileCountVert = 12;
 
 }
 
@@ -18,7 +18,7 @@ function setGamestateRed() {
   }
 
   tileGapSize = 0;
-  tileCountHoriz = 12;
+  tileCountHoriz = 18;
   tileCountVert = 12;
 
 }
@@ -30,7 +30,7 @@ function setGamestateOrange() {
   }
 
   tileGapSize = 0;
-  tileCountHoriz = 12;
+  tileCountHoriz = 18;
   tileCountVert = 12;
 
 }
@@ -42,7 +42,7 @@ function setGamestateYellow() {
   }
 
   tileGapSize = 0;
-  tileCountHoriz = 12;
+  tileCountHoriz = 18;
   tileCountVert = 12;
 
 }
@@ -54,7 +54,7 @@ function setGamestateGreen() {
   }
 
   tileGapSize = 0;
-  tileCountHoriz = 12;
+  tileCountHoriz = 18;
   tileCountVert = 12;
 
 }
@@ -66,7 +66,7 @@ function setGamestateBlue() {
   }
 
   tileGapSize = 0;
-  tileCountHoriz = 12;
+  tileCountHoriz = 18;
   tileCountVert = 12;
 
 }
@@ -78,7 +78,7 @@ function setGamestatePurple() {
   }
 
   tileGapSize = 0;
-  tileCountHoriz = 12;
+  tileCountHoriz = 18;
   tileCountVert = 12;
 
 }
