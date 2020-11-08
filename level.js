@@ -2,45 +2,40 @@ var tileExistsCriteriaFunction;
 var tileGapSize;
 var tileCountHoriz;
 var tileCountVert;
-var cols, rows;
+var levelmap = [];
+const tileScale = 40;
+function generate_levelMap() {
+  for(let i = 0; i < tileCountHoriz; ++i) {
+      levelmap[i] = [];
+    for(let j = 0; j < tileCountVert; ++j) {
+      levelmap[i][j] = 0;
+    }
+  }
+}
 
 function draw_level() {
+  generate_levelMap();
   // define colors
-var black = [0,0,0];
-var b = [0,255,0];
-var teal = [0,128,128];
-var orange = [255,165,0];
-var white = [255,255,255];
-var r = [255,0,0];
-var g = [0,255,0];
-var brown = [165,42,42];
-var yellow = [255,2550,0];
-var purple = [128,0,128];
-var grey = [100,100,100];
-var colors = [black, white, g,grey,orange,yellow,purple,teal,r,b];
-var scl = 41;
-
-  cols = floor(width/scl)
-  rows = floor(height/scl)
-  // ROWx10 (row___)
-  // colx1 (ROWCOL) FOR SEED
+// 1=red, 2 = orange, 3 = yellow, 4 = green, 5 = blue, 6 = pink
+let colors = ['orange', 'yellow', 'green','red', 'blue', 'violet', 'black','black','grey'];
+  // keep state of room:
   noiseSeed(player_minimap_pos.x*10+player_minimap_pos.y);
   background(255);
-  var yoff=0;
-  for(let y=0;y<rows;y++){
-    var xoff=0;
-    for(var x=0;x<cols;x++){
+  var nyOff=0;
+  for(let levX=0;levX<tileCountHoriz;levX++){
+    var nxOff=0;
+    for(var levY=0;levY<tileCountVert;levY++){
       // var index = (x+y *width)*4;
-      var r = Math.floor(noise(xoff, yoff) *9);
+      var r = Math.floor(noise(nxOff, nyOff) *9);
+      levelmap[levX][levY] = r;
+      nxOff+=.1;
     
-      xoff+=.1;
       
-      fill(colors[r][0],colors[r][1],colors[r][2],);
-      rect(x*scl, y*scl, scl, scl);
+      fill(colors[r]);
+      rect(levX*tileScale+345, levY*tileScale+105, tileScale, tileScale);
     }
-    yoff+=.1;
+    nyOff+=.1;
   }
-
-  fill(color("white"));
-  circle(scl/2+player_level_pos.x*scl,scl/2+player_level_pos.y*scl,30);
+  // console.log(levelmap);
+  // noLoop();
 }
