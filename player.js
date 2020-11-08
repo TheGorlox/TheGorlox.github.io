@@ -20,6 +20,29 @@ function inv_increment() {
   else player_inv.red = true;
 }
 
+function inv_increment_conditional() {
+  switch(levelmap[player_level_pos.x][player_level_pos.y]) {
+    case 0:
+      if(player_inv.red) player_inv.orange = true;
+      break;
+    case 1:
+      if(player_inv.orange) player_inv.yellow = true;
+      break;
+    case 2:
+      if(player_inv.yellow) player_inv.green = true;
+      break;
+    case 3:
+      //player_inv.red
+      break;
+    case 4:
+      if(player_inv.green) player_inv.blue = true;
+      break;
+    case 5:
+      if(player_inv.blue) player_inv.violet = true;
+      break;
+  }
+}
+
 function add_current_color_to_inv() {
 	player_inv[minimap[player_minimap_pos.x][player_minimap_pos.y]] = true;
 }
@@ -73,6 +96,7 @@ function level_go_up() {
     go_up();
     return;
   }
+  inv_increment_conditional();
   if (!hasColor(player_level_pos.x, player_level_pos.y-1)) {
     die();
     return;
@@ -85,6 +109,7 @@ function level_go_down() {
     go_down();
     return;
   }
+  inv_increment_conditional();
   if (!hasColor(player_level_pos.x, player_level_pos.y+1)) {
     die();
     return;
@@ -97,6 +122,7 @@ function level_go_left() {
     go_left();
     return;
   }
+  inv_increment_conditional();
   if (!hasColor(player_level_pos.x-1, player_level_pos.y)) {
     die();
     return;
@@ -109,6 +135,7 @@ function level_go_right() {
     go_right();
     return;
   }
+  inv_increment_conditional();
   if (!hasColor(player_level_pos.x+1, player_level_pos.y)) {
     die();
     return;
