@@ -24,7 +24,7 @@ var scl = 41;
   rows = floor(height/scl)
   // ROWx10 (row___)
   // colx1 (ROWCOL) FOR SEED
-  noiseSeed(player_pos.x*10+player_pos.y);
+  noiseSeed(player_minimap_pos.x*10+player_minimap_pos.y);
   background(255);
   var yoff=0;
   for(let y=0;y<rows;y++){
