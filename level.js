@@ -27,7 +27,8 @@ let colors = ['orange', 'yellow', 'green','red', 'blue', 'violet', 'black','blac
     for(var levY=0;levY<tileCountVert;levY++){
       // var index = (x+y *width)*4;
       var r = Math.floor(noise(nxOff, nyOff) *9);
-      levelmap[levX][levY] = r;
+      if(levX == Math.floor(tileCountHoriz/2) || levY == Math.floor(tileCountVert/2)) levelmap[levX][levY] = 3;
+      else levelmap[levX][levY] = r;
       nxOff+=.1;
     
       if(levX == Math.floor(tileCountHoriz/2) || levY == Math.floor(tileCountVert/2)) fill(colors[3]);
