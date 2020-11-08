@@ -21,7 +21,7 @@ function generate_minimap() {
   minimap_starting_room_obj.x = Math.floor(Math.random() * 10); 
   minimap_starting_room_obj.y = Math.floor(Math.random() * 10); 
   
-  player_pos = Object.assign({}, minimap_starting_room_obj);
+  player_minimap_pos = Object.assign({}, minimap_starting_room_obj);
   
   minimap[minimap_starting_room_obj.x][minimap_starting_room_obj.y] = 1;
   
@@ -122,7 +122,7 @@ function draw_minimap() {
   }
   
   fill(color('white'));
-  circle(110+player_pos.x*20,110+player_pos.y*20,15);
+  circle(110+player_minimap_pos.x*20,110+player_minimap_pos.y*20,15);
   
 }
   
