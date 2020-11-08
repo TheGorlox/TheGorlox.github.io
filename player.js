@@ -31,6 +31,8 @@ function go_up() {
     return;
   draw_level();
   player_minimap_pos.y -= 1;
+  player_level_pos.x = Math.floor(tileCountHoriz/2);
+  player_level_pos.y = tileCountVert-1;
 }
 
 function go_down() {
@@ -40,6 +42,8 @@ function go_down() {
     return;
   draw_level();
   player_minimap_pos.y += 1;
+  player_level_pos.x = Math.floor(tileCountHoriz/2);
+  player_level_pos.y = 0;
 }
 
 function go_left() {
@@ -49,6 +53,8 @@ function go_left() {
     return;
   draw_level();
   player_minimap_pos.x -= 1;
+  player_level_pos.x = tileCountHoriz-1;
+  Math.floor(tileCountVert/2);
 }
 
 function go_right() {
@@ -58,6 +64,8 @@ function go_right() {
     return;
   draw_level();
   player_minimap_pos.x += 1;
+  player_level_pos.x = 0;
+  Math.floor(tileCountVert/2);
 }
 
 function level_go_up() {
