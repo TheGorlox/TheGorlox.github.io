@@ -9,7 +9,6 @@ function setup() {
   inv_increment(); // Hacky way to give Red to the Player at the start
   generate_minimap();
   input_setup();
-  setGamestateMenu();
   set_button_positions();
 
 }

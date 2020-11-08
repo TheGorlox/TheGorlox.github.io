@@ -1,7 +1,5 @@
-var tileExistsCriteriaFunction;
-var tileGapSize;
-var tileCountHoriz;
-var tileCountVert;
+var tileCountHoriz = 30;
+var tileCountVert = 20;
 var levelmap = [];
 const tileScale = 40;
 function generate_levelMap() {
