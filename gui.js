@@ -72,7 +72,6 @@ function generate_minimap() {
 }
 
 function expand(minimap,i,j,chance, falloff, rooms_left) {
-  console.log("vars: " + i + " " + j + " " + chance);
   
   if (Math.random() > chance + rooms_left) {
     return false;
