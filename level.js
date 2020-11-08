@@ -30,8 +30,8 @@ let colors = ['orange', 'yellow', 'green','red', 'blue', 'violet', 'black','blac
       levelmap[levX][levY] = r;
       nxOff+=.1;
     
-      
-      fill(colors[r]);
+      if(levX == Math.floor(tileCountHoriz/2) || levY == Math.floor(tileCountVert/2)) fill(colors[3]);
+      else fill(colors[r]);
       rect(levX*tileScale+345, levY*tileScale+105, tileScale, tileScale);
     }
     nyOff+=.1;
