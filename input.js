@@ -44,10 +44,12 @@ function on_key_pressed() {
 
   if (key == '1') {
     setGamestateMenu();
+    inv_increment();
   }
 
   if (key == '2') {
     setGamestateRed();
+    init_inv();
   }
 
   if (key == '3') {

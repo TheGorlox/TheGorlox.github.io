@@ -145,13 +145,13 @@ function draw_progress_bar() {
   	square(windowWidth - increment - 5, increment * i + padding, increment);
 	  stroke(color(colors[i]));
 	  if(player_inv[colors[i]]) {
-	    fill(colors[i]);
+      fill('black');
 	  } else {
-	  	fill('black');
+	  	fill(colors[i]);
 	  }
 	  square(windowWidth - increment - 5 + (increment-size)/2, increment * i + padding + (increment-size)/2, size);
   }
   
   strokeWeight(1);
-  stroke(color('black'));
+  stroke(color('black')); 
 }

@@ -10,6 +10,15 @@ function init_inv() {
   player_inv.violet = false;
 }
 
+function inv_increment() {
+  if(player_inv.blue) player_inv.violet = true;
+  else if(player_inv.green) player_inv.blue = true;
+  else if(player_inv.yellow) player_inv.green = true;
+  else if(player_inv.orange) player_inv.yellow = true;
+  else if(player_inv.red) player_inv.orange = true;
+  else player_inv.red = true;
+}
+
 function add_current_color_to_inv() {
 	player_inv[minimap[player_minimap_pos.x][player_minimap_pos.y]] = true;
 }
