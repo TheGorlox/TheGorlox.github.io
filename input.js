@@ -43,33 +43,11 @@ function on_key_pressed() {
   }
 
   if (key == '1') {
-    setGamestateMenu();
     inv_increment();
   }
 
   if (key == '2') {
-    setGamestateRed();
     init_inv();
-  }
-
-  if (key == '3') {
-    setGamestateOrange();
-  }
-
-  if (key == '4') {
-    setGamestateYellow();
-  }
-
-  if (key == '5') {
-    setGamestateGreen();
-  }
-
-  if (key == '6') {
-    setGamestateBlue();
-  }
-
-  if (key == '7') {
-    setGamestatePurple();
   }
 
   if (key == '0') {
