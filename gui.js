@@ -22,6 +22,9 @@ function generate_minimap() {
   minimap_starting_room_obj.y = Math.floor(Math.random() * 10); 
   
   player_minimap_pos = Object.assign({}, minimap_starting_room_obj);
+  player_level_pos = new Object();
+  player_level_pos.x = 10;
+  player_level_pos.y = 10;
   
   minimap[minimap_starting_room_obj.x][minimap_starting_room_obj.y] = 1;
   
@@ -69,7 +72,6 @@ function generate_minimap() {
 }
 
 function expand(minimap,i,j,chance, falloff, rooms_left) {
-  console.log("vars: " + i + " " + j + " " + chance);
   
   if (Math.random() > chance + rooms_left) {
     return false;
@@ -142,13 +144,13 @@ function draw_progress_bar() {
   	square(windowWidth - increment - 5, increment * i + padding, increment);
 	  stroke(color(colors[i]));
 	  if(player_inv[colors[i]]) {
-	    fill(colors[i]);
+      fill('black');
 	  } else {
-	  	fill('black');
+	  	fill(colors[i]);
 	  }
 	  square(windowWidth - increment - 5 + (increment-size)/2, increment * i + padding + (increment-size)/2, size);
   }
   
   strokeWeight(1);
-  stroke(color('black'));
+  stroke(color('black')); 
 }

@@ -10,6 +10,15 @@ function init_inv() {
   player_inv.violet = false;
 }
 
+function inv_increment() {
+  if(player_inv.blue) player_inv.violet = true;
+  else if(player_inv.green) player_inv.blue = true;
+  else if(player_inv.yellow) player_inv.green = true;
+  else if(player_inv.orange) player_inv.yellow = true;
+  else if(player_inv.red) player_inv.orange = true;
+  else player_inv.red = true;
+}
+
 function add_current_color_to_inv() {
 	player_inv[minimap[player_minimap_pos.x][player_minimap_pos.y]] = true;
 }
@@ -19,8 +28,7 @@ function go_up() {
     return;
   if(minimap[player_minimap_pos.x][player_minimap_pos.y - 1] == 0)
     return;
-  draw_level();  
-  add_current_color_to_inv();
+  draw_level();
   player_minimap_pos.y -= 1;
 }
 
@@ -30,7 +38,6 @@ function go_down() {
   if(minimap[player_minimap_pos.x][player_minimap_pos.y + 1] == 0)
     return;
   draw_level();
-  add_current_color_to_inv();
   player_minimap_pos.y += 1;
 }
 
@@ -40,7 +47,6 @@ function go_left() {
   if(minimap[player_minimap_pos.x - 1][player_minimap_pos.y] == 0)
     return;
   draw_level();
-  add_current_color_to_inv();
   player_minimap_pos.x -= 1;
 }
 
@@ -50,11 +56,36 @@ function go_right() {
   if(minimap[player_minimap_pos.x + 1][player_minimap_pos.y] == 0)
     return;
   draw_level();
-  add_current_color_to_inv();
   player_minimap_pos.x += 1;
 }
 
+function level_go_up() {
+  if(player_level_pos.y - 1 < 0 )
+    return;
+  player_level_pos.y -= 1;
+}
+
+function level_go_down() {
+  if(player_level_pos.y + 1 > rows-1)
+    return;
+  player_level_pos.y += 1;
+}
+
+function level_go_left() {
+  if(player_level_pos.x - 1 < 0)
+    return;
+  player_level_pos.x -= 1;
+}
+
+function level_go_right() {
+  if(player_level_pos.x + 1 > cols-1)
+    return;
+  player_level_pos.x += 1;
+}
+
 function die() {
+  init_inv();
+  draw_level();
   player_minimap_pos.x = minimap_starting_room_obj.x;
   player_minimap_pos.y = minimap_starting_room_obj.y;
 }
