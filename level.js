@@ -15,7 +15,7 @@ function draw_level() {
   generate_levelMap();
   // define colors
 // 1=red, 2 = orange, 3 = yellow, 4 = green, 5 = blue, 6 = pink
-let colors = ['orange', 'yellow', 'green','red', 'blue', 'violet', 'black','black','grey'];
+let colors = ['orange', 'yellow', 'green','red', 'blue', 'violet', 'black','orange','grey'];
   // keep state of room:
   noiseSeed(player_minimap_pos.x*10+player_minimap_pos.y);
   background(255);
