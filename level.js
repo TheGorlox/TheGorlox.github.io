@@ -37,4 +37,7 @@ let colors = ['orange', 'yellow', 'green','red', 'blue', 'violet', 'black','blac
   }
   // console.log(levelmap);
   // noLoop();
+  fill(color("white"));
+  var offset = tileScale/2;
+  circle(345+offset+player_level_pos.x*tileScale,105+offset+player_level_pos.y*tileScale,30);
 }
