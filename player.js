@@ -61,8 +61,10 @@ function go_right() {
 }
 
 function level_go_up() {
-  if(player_level_pos.y - 1 < 0 )
+  if(player_level_pos.y - 1 < 0 ) {
+    go_up();
     return;
+  }
   if (!hasColor(player_level_pos.x, player_level_pos.y-1)) {
     die();
     return;
@@ -71,8 +73,10 @@ function level_go_up() {
 }
 
 function level_go_down() {
-  if(player_level_pos.y + 1 > tileCountVert-1)
+  if(player_level_pos.y + 1 > tileCountVert-1){
+    go_down();
     return;
+  }
   if (!hasColor(player_level_pos.x, player_level_pos.y+1)) {
     die();
     return;
@@ -81,8 +85,10 @@ function level_go_down() {
 }
 
 function level_go_left() {
-  if(player_level_pos.x - 1 < 0)
+  if(player_level_pos.x - 1 < 0){
+    go_left();
     return;
+  }
   if (!hasColor(player_level_pos.x-1, player_level_pos.y)) {
     die();
     return;
@@ -91,8 +97,10 @@ function level_go_left() {
 }
 
 function level_go_right() {
-  if(player_level_pos.x + 1 > tileCountHoriz-1)
+  if(player_level_pos.x + 1 > tileCountHoriz-1){
+    go_right();
     return;
+  }
   if (!hasColor(player_level_pos.x+1, player_level_pos.y)) {
     die();
     return;
