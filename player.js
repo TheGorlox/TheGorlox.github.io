@@ -54,6 +54,30 @@ function go_right() {
   player_minimap_pos.x += 1;
 }
 
+function level_go_up() {
+  if(player_level_pos.y - 1 < 0 )
+    return;
+  player_level_pos.y -= 1;
+}
+
+function level_go_down() {
+  if(player_level_pos.y + 1 > rows-1)
+    return;
+  player_level_pos.y += 1;
+}
+
+function level_go_left() {
+  if(player_level_pos.x - 1 < 0)
+    return;
+  player_level_pos.x -= 1;
+}
+
+function level_go_right() {
+  if(player_level_pos.x + 1 > cols-1)
+    return;
+  player_level_pos.x += 1;
+}
+
 function die() {
   player_minimap_pos.x = minimap_starting_room_obj.x;
   player_minimap_pos.y = minimap_starting_room_obj.y;

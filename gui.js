@@ -22,6 +22,9 @@ function generate_minimap() {
   minimap_starting_room_obj.y = Math.floor(Math.random() * 10); 
   
   player_minimap_pos = Object.assign({}, minimap_starting_room_obj);
+  player_level_pos = new Object();
+  player_level_pos.x = 10;
+  player_level_pos.y = 10;
   
   minimap[minimap_starting_room_obj.x][minimap_starting_room_obj.y] = 1;
   

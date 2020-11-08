@@ -2,6 +2,7 @@ var tileExistsCriteriaFunction;
 var tileGapSize;
 var tileCountHoriz;
 var tileCountVert;
+var cols, rows;
 
 function draw_level() {
   // define colors
@@ -17,7 +18,6 @@ var yellow = [255,2550,0];
 var purple = [128,0,128];
 var grey = [100,100,100];
 var colors = [black, white, g,grey,orange,yellow,purple,teal,r,b];
-var cols, rows;
 var scl = 41;
 
   cols = floor(width/scl)
@@ -40,4 +40,7 @@ var scl = 41;
     }
     yoff+=.1;
   }
+
+  fill(color("white"));
+  circle(scl/2+player_level_pos.x*scl,scl/2+player_level_pos.y*scl,30);
 }
