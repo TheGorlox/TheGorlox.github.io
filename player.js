@@ -40,6 +40,12 @@ function inv_increment_conditional() {
     case 5:
       if(player_inv.blue) player_inv.violet = true;
       break;
+    case 6:
+      if(player_inv.red) player_inv.orange = true;
+      break;
+    case 7:
+      if(player_inv.red) player_inv.orange = true;
+      break;
   }
 }
 
@@ -96,12 +102,12 @@ function level_go_up() {
     go_up();
     return;
   }
+  player_level_pos.y -= 1;
   inv_increment_conditional();
-  if (!hasColor(player_level_pos.x, player_level_pos.y-1)) {
+  if (!hasColor(player_level_pos.x, player_level_pos.y)) {
     die();
     return;
   }
-  player_level_pos.y -= 1;
 }
 
 function level_go_down() {
@@ -109,12 +115,12 @@ function level_go_down() {
     go_down();
     return;
   }
+  player_level_pos.y += 1;
   inv_increment_conditional();
-  if (!hasColor(player_level_pos.x, player_level_pos.y+1)) {
+  if (!hasColor(player_level_pos.x, player_level_pos.y)) {
     die();
     return;
   }
-  player_level_pos.y += 1;
 }
 
 function level_go_left() {
@@ -122,12 +128,12 @@ function level_go_left() {
     go_left();
     return;
   }
+  player_level_pos.x -= 1;
   inv_increment_conditional();
-  if (!hasColor(player_level_pos.x-1, player_level_pos.y)) {
+  if (!hasColor(player_level_pos.x, player_level_pos.y)) {
     die();
     return;
   }
-  player_level_pos.x -= 1;
 }
 
 function level_go_right() {
@@ -135,12 +141,12 @@ function level_go_right() {
     go_right();
     return;
   }
+  player_level_pos.x += 1;
   inv_increment_conditional();
-  if (!hasColor(player_level_pos.x+1, player_level_pos.y)) {
+  if (!hasColor(player_level_pos.x, player_level_pos.y)) {
     die();
     return;
   }
-  player_level_pos.x += 1;
 }
 
 function hasColor(x,y) {
@@ -162,6 +168,12 @@ function hasColor(x,y) {
       break;
     case 5:
       return player_inv.violet;
+      break;
+    case 6:
+      return player_inv.orange;
+      break;
+    case 7:
+      return player_inv.orange;
       break;
     default:
       return false;
